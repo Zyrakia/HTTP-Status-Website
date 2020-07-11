@@ -15,7 +15,13 @@ const viewTableBtn = document.getElementById("open-table");
 const table = document.getElementById("table-wrapper");
 
 viewTableBtn.addEventListener("click", () => {
-    if (table.classList.contains("table-hidden"))
+    if (table.classList.contains("table-hidden")) {
         table.classList.remove("table-hidden");
-    else table.classList.add("table-hidden");
+        viewTableBtn.classList.add("open");
+        viewTableBtn.innerText = "Close Table";
+    } else {
+        table.classList.add("table-hidden");
+        viewTableBtn.classList.remove("open");
+        viewTableBtn.innerText = "View Table";
+    }
 });

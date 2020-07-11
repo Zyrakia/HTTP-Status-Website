@@ -69,13 +69,14 @@ body {
     position: absolute;
     height: 100vh;
     left: 0;
+    top: 0vh;
     overflow: auto;
     background: var(--var-acnt);
     transition: all 500ms ease;
 }
 
 .table-hidden {
-    left: -100%;
+    left: -500%;
 }
 
 .codes-table {
@@ -102,6 +103,11 @@ th {
     border: 1px solid var(--var-acnt);
     transition: all 250ms ease;
     cursor: pointer;
+    z-index: 2;
+}
+
+.open {
+    border: 1px solid black;
 }
 
 .open-table:hover {
@@ -117,4 +123,51 @@ th {
     top: 10px;
     left: 10px;
     color: #3f4854;
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .code {
+        font-size: 6em;
+    }
+
+    .desc {
+        font-size: 3em;
+    }
+    .explainer {
+        font-size: 10px;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .code {
+        font-size: 8em;
+    }
+
+    .desc {
+        font-size: 3em;
+    }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    .code {
+        font-size: 12em;
+    }
+
+    .desc {
+        font-size: 4em;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+    .code {
+        font-size: 15em;
+    }
+
+    .desc {
+        font-size: 5em;
+    }
 }
